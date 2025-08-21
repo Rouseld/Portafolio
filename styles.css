@@ -1,0 +1,12 @@
+html {
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --bg__color:#060612;
+    --primary__white:#ffffff;
+    --gradient__primary: linear-gradient(90deg, #FFF 0%, #AA91FC 100%);
+    --gradient__secondary:
+
+}
