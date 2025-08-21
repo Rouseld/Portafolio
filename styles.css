@@ -7,6 +7,19 @@ html {
     --bg__color:#060612;
     --primary__white:#ffffff;
     --gradient__primary: linear-gradient(90deg, #FFF 0%, #AA91FC 100%);
-    --gradient__secondary:
+    --gradient__secondary:linear-gradient(184deg, #FCDAAF -13.03%, #7651B6 20.24%, #060612 85.81%);
+    --height__sections:1600px 
+}
+
+body {
+    background-color: var(--bg__color);
+}
+
+.section__hero{
+    background-image: var(--gradient__secondary);
+    height: var(--height__sections);
+}
+
+.section__process{
 
 }
