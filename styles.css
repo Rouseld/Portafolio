@@ -1,6 +1,6 @@
-html {
-    margin: 0;
-    padding: 0;
+html, body {
+    margin: 0px;
+    padding: 0px;
 }
 
 :root{
@@ -8,18 +8,69 @@ html {
     --primary__white:#ffffff;
     --gradient__primary: linear-gradient(90deg, #FFF 0%, #AA91FC 100%);
     --gradient__secondary:linear-gradient(184deg, #FCDAAF -13.03%, #7651B6 20.24%, #060612 85.81%);
-    --height__sections:1600px 
+    --height__sections:1600px;
+    --font__Primary:'Futura Hv BT', sans-serif;
+    --font__Secondary:'Quicksand',sans-serif;
 }
 
 body {
     background-color: var(--bg__color);
 }
 
+@font-face {
+    font-family: 'Futura Hv BT';
+    src: url(./fonts/Futura\ Heavy\ BT.ttf);
+}
+
+@font-face {
+    font-family: 'Futura Book BT';
+    src: url(./fonts/Futura\ Book\ BT.ttf);
+}
+
+@font-face {
+    font-family: 'Futura Hv Heavy';
+    src: url(./fonts/Futura\ Hv\ Heavy.ttf);
+}
+
 .section__hero{
     background-image: var(--gradient__secondary);
     height: var(--height__sections);
+    width: 100%;
 }
 
-.section__process{
-
+.title__h1{
+    font-family: var(--font__Primary);
+    font-size: 128px;
 }
+
+.title__h3{
+    font-family: var(--font__Primary);
+    font-size: 64px;
+}
+
+.section__hero__innercontainer{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.section__hero__innercontainer--top,.section__hero__innercontainer--bottom{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero__innercontainer__bottom__slider{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
