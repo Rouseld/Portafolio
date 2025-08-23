@@ -109,6 +109,10 @@ body {
     align-items: center;
 }
 
+.section__hero__innercontainer--bottom{
+
+}
+
 .hero__innercontainer__bottom__slider{
     display: flex;
     flex-wrap: nowrap;
@@ -117,12 +121,20 @@ body {
     justify-content: center;
     gap: 32px;
     width: 100%;
+    animation: sliders 30s linear infinite;
 }
 
-.hero__innercontainer__bottom__slider[data-animated='true'] {
-    overflow: hidden;
+.hero__innercontainer__bottom__slider:hover{
+
+    animation-play-state: paused;
+}
+
+
+
+.section__hero__innercontainer--bottom[data-animated='true'] {
     mask-image: linear-gradient(to right, transparent, white 20%, white 80%, transparent);
     -webkit-mask-image: linear-gradient(to right, transparent, white 20%, white 80%, transparent);
+    overflow: hidden;
 }
 
 .section__process--innercontainer{
@@ -145,4 +157,10 @@ body {
     justify-content: center;
     align-items: center;
     gap: 32px;
+}
+
+@keyframes sliders {
+    to {
+        transform: translate(calc(-100% - 32px));
+    }
 }

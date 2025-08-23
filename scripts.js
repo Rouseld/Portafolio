@@ -2,7 +2,7 @@ let hero__slider;
 
 
 document.addEventListener('DOMContentLoaded',function(){
-    const result = document.getElementsByClassName('hero__innercontainer__bottom__slider')[0]
+    const result = document.getElementsByClassName('section__hero__innercontainer--bottom')[0]
     hero__slider = result
     console.log('se ha cargado el dom')
     console.log(hero__slider) 
