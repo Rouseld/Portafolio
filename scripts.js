@@ -17,6 +17,22 @@ function addAnimation(){
     console.log(hero__slider)
     hero__slider.setAttribute("data-animated", true);
     console.log('se ha ejecutado')
+    
+    
+    //Html slider content functions
+
+    const heroSliderInner = hero__slider.querySelector('.hero__innercontainer__bottom__slider')
+    console.log(heroSliderInner)
+    
+    
+    const heroSliderInnerContent = Array.from(heroSliderInner.children)
+    console.log(heroSliderInnerContent)
+
+    heroSliderInnerContent.forEach((item) => {
+      const duplicatedItem = item.cloneNode(true);
+      duplicatedItem.setAttribute('aria-hidden', true);
+      heroSliderInner.appendChild(duplicatedItem)
+    });
 }
 
 console.log(hero__slider)
