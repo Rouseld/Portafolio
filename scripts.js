@@ -1,4 +1,5 @@
 let hero__slider;
+let hero__slider__contents;
 
 
 document.addEventListener('DOMContentLoaded',function(){
@@ -9,6 +10,8 @@ document.addEventListener('DOMContentLoaded',function(){
 
     if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
   addAnimation();
+
+  openSliderOverlay()
 }
 })
 
@@ -35,4 +38,23 @@ function addAnimation(){
     });
 }
 
-console.log(hero__slider)
+function openSliderOverlay(){
+  const hero__sliders = document.querySelectorAll(".main-slider"); // Seleccion de todos los items del carrusel
+  hero__sliders.forEach(value => {
+    value.addEventListener('click' ,() =>{ // agregamos el event listener a cada uno de los slides
+      hero__sliders.forEach(sliderInactive =>{
+        const sliderOverlayDisabling = sliderInactive.querySelector('.slider-overlay--hidden') // verificacion de que los slides esten oculto al que se esta seleccionando
+        console.log(sliderOverlayDisabling)
+      
+      })
+
+      const sliderOverlayActivating = document.querySelector('div[overlay]');
+      if (sliderOverlayActivating){
+        sliderOverlayActivating.setAttribute('overlay','visible')
+      }
+    })
+  })
+}
+
+console.log(openSliderOverlay)
+openSliderOverlay();
