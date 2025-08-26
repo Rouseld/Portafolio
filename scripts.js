@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded',function(){
     if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
   addAnimation();
 
-  openSliderOverlay()
+  toggleSliderOverlay();
 }
 })
 
@@ -38,23 +38,47 @@ function addAnimation(){
     });
 }
 
-function openSliderOverlay(){
-  const hero__sliders = document.querySelectorAll(".main-slider"); // Seleccion de todos los items del carrusel
-  hero__sliders.forEach(value => {
-    value.addEventListener('click' ,() =>{ // agregamos el event listener a cada uno de los slides
-      hero__sliders.forEach(sliderInactive =>{
-        const sliderOverlayDisabling = sliderInactive.querySelector('.slider-overlay--hidden') // verificacion de que los slides esten oculto al que se esta seleccionando
-        console.log(sliderOverlayDisabling)
-      
-      })
+function toggleSliderOverlay() {
+  const hero_sliders = document.querySelectorAll(".main-slider"); 
+  console.log(hero_sliders)
 
-      const sliderOverlayActivating = document.querySelector('div[overlay]');
-      if (sliderOverlayActivating){
-        sliderOverlayActivating.setAttribute('overlay','visible')
+  hero_sliders.forEach(slider => {
+      console.log(slider)
+    slider.addEventListener('click', () => {
+      const allOverlays = document.querySelectorAll('.slider-overlay--visible');
+      console.log(allOverlays)
+
+      function closeOtherOverlay(){
+        allOverlays.forEach(overlay => {
+        overlay.classList.remove('slider-overlay--visible');
+        overlay.classList.add('slider-overlay--hidden')
+      });
       }
-    })
-  })
+
+      const hiddenOverlays = slider.querySelector('.slider-overlay--hidden');
+      const visibleOverlays = slider.querySelector('.slider-overlay--visible')
+      console.log(visibleOverlays)
+
+
+    if(!visibleOverlays){
+      console.log('No hay overlays')
+      console.log(typeof(visibleOverlay))
+      console.log(visibleOverlays)
+      if(hiddenOverlays.className !== 'hero__slider--1-content slider-overlay--visible'){
+         hiddenOverlays.classList.remove('slider-overlay--hidden')
+         hiddenOverlays.classList.add('slider-overlay--visible'); 
+         console.log('se ejecuto if')
+                 closeOtherOverlay();
+     } 
+    } else {
+        visibleOverlays.classList.remove('slider-overlay--visible')
+        visibleOverlays.classList.add('slider-overlay--hidden')
+        closeOtherOverlay();
+
+    }
+
+    });
+  });
 }
 
-console.log(openSliderOverlay)
-openSliderOverlay();
+toggleSliderOverlay();
