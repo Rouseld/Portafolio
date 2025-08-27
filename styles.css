@@ -134,6 +134,9 @@ body {
     animation: sliders 40s linear infinite;
 }
 
+.hero__innercontainer__bottom__slider--paused{
+    animation-play-state: paused;
+}
 
 
 
@@ -167,7 +170,7 @@ body {
 
 }
 
-.hero__slider--1-innercontent,.hero__slider--2-innercontent{
+.hero__slider--1-innercontent,.hero__slider--2-innercontent,.hero__slider--3-innercontent,.hero__slider--4-innercontent, .hero__slider--5-innercontent,.hero__slider--6-innercontent{
     width: calc(100% - 48px);
     height:calc(100% - 48px) ;
     padding: 48px;
