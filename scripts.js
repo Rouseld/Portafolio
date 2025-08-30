@@ -6,6 +6,7 @@ let processSliderContainer;
 let processSliderInnerContainer;
 let processSliderButtonRight;
 let processSliderButtonLeft;
+let projectItem;
 
 document.addEventListener('DOMContentLoaded', function() {
     const result = document.getElementsByClassName('section__hero__innercontainer--bottom')[0];
@@ -15,6 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
     processSliderInnerContainer = document.querySelector('.section__process__innercontainer--sliderinnercontainer')
     processSliderButtonRight = document.querySelector('.section__process__innercontainer--buttonright')
     processSliderButtonLeft = document.querySelector('.section__process__innercontainer--buttonleft')
+    projectItem = document.querySelector('.section__projects__innercontainer--projectitem')
     hero__slider = result;
 
     if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {

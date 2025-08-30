@@ -262,6 +262,13 @@ body {
 
 }
 
+.section__process__innercontainer--slidercontainer::-webkit-scrollbar{
+
+    display: none;
+
+}
+
+
 .section__process__innercontainer--sliderinnercontainer{
     display: flex;
     flex-direction: row;
@@ -328,13 +335,17 @@ body {
     width: 20px;
     padding: 16px;
     border-radius: 500px;
+    cursor: pointer;
 }
 
 .section__skills{
     display: flex;
-    height: var(--height__medium);
+    height: var(--height__large);
     align-items: center;
     justify-content: center;
+    background-image: url(./media/Asset__Bg--Skills.png);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .section__skills--innercontainer{
@@ -360,10 +371,61 @@ body {
 }
 
 .skills{
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     padding: 40px 48px;
     object-fit: contain;
     border: solid #6B6767 1px;
     border-radius: 24px;
 }
+
+
+.section__projects--innercontainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 48px;
+    width: 100%;
+    align-items: center;
+}
+
+.section__projects__innercontainer--top{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+}
+
+.section__projects__innercontainer--bottom{
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    
+}
+
+.section__projects__innercontainer--projectitem{
+    max-width:550px;
+    height: 350px;
+    display: inline-block;
+}
+
+.section__projects__innercontainer--projectimage{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.title__project{
+   display: none;
+}
+
+.title__project:hover,.hero__slider--tags:hover{
+    opacity: 1;
+}
+
+.hero__slider--1-tags{
+    opacity: 0;
+}
+
