@@ -8,6 +8,7 @@ let processSliderButtonRight;
 let processSliderButtonLeft;
 let projectItemContainer;
 let projectItem;
+let projectTitle;
 
 document.addEventListener('DOMContentLoaded', function() {
     const result = document.getElementsByClassName('section__hero__innercontainer--bottom')[0];
@@ -19,6 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
     processSliderButtonLeft = document.querySelector('.section__process__innercontainer--buttonleft')
     projectItemContainer = document.querySelector('.section__projects__innercontainer--bottom')
     projectItem = projectItemContainer.children
+    projectTitle = document.querySelector('.title__project')
     hero__slider = result;
 
     if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
@@ -26,6 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     addEvents();
+    hoverProjectItem()
 });
 
 function addAnimation() {
@@ -40,11 +43,33 @@ function addAnimation() {
     });
 }
 
+function hoverProjectItem(){
+
+    const itemArray = Array.from(projectItem)
+    console.log(itemArray)
+    itemArray.forEach( (value) => {
+        value.addEventListener('mouseover', () =>{
+            const innerItem = value.children
+            const arrayInnerItem = Array.from(innerItem)
+            const itemTitle =arrayInnerItem[1]
+            itemTitle.classList.remove('title__project')
+            itemTitle.classList.add('title__project--visible')
+        })
+
+        value.addEventListener('mouseleave', () =>{
+            const innerItem = value.children
+            const arrayInnerItem = Array.from(innerItem)
+            const itemTitle = arrayInnerItem[1]
+            if ( itemTitle.className === 'title__h4 title__project--visible')
+            itemTitle.classList.remove('title__project--visible')
+            itemTitle.classList.add('title__project')
+        })
+    })
+}
+
 function addEvents(){
   processSliderButtonRight.addEventListener('click', function(){
-    console.log('funciona')
     const startPosition = new DOMMatrix(getComputedStyle(processSliderInnerContainer).transform).m41;
-    console.warn(startPosition)
     const distanceToMove = -500
     const duration = 1500
     const targetPostion = startPosition + distanceToMove;
