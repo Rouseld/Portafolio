@@ -78,6 +78,18 @@ body {
     font-family: var(--font__Secondary);
 }
 
+.tags__small{
+    width: fit-content;
+    height: fit-content;
+    padding: 8px 16px;
+    background-color: var(--primary__base--white);
+    border-radius: 50px;
+    color: var(--bg__color);
+    font-size: 20px;
+    font-family: var(--font__Secondary);
+    font-weight:500;
+}
+
 .title__h1 {
     font-family: var(--font__Primary);
     font-size: 128px;
@@ -440,10 +452,11 @@ body {
    transition-duration: 1s;
 }
 
+
 .title__project--visible{
     display: inline-block;
     position:absolute;
-    bottom: 48px;
+    bottom: 78px;
     left: 32px;
     transition: ease-in-out;
     transition-duration: 1s;
@@ -457,6 +470,9 @@ body {
     flex-direction: row;
     width: fit-content;
     height: fit-content;
-    gap: 32px;
+    gap: 16px;
+    position:absolute;
+    bottom: 0px;
+    left: 24px;
 }
 

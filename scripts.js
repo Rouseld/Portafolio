@@ -51,18 +51,32 @@ function hoverProjectItem(){
         value.addEventListener('mouseover', () =>{
             const innerItem = value.children
             const arrayInnerItem = Array.from(innerItem)
+
             const itemTitle =arrayInnerItem[1]
             itemTitle.classList.remove('title__project')
             itemTitle.classList.add('title__project--visible')
+
+            console.warn(arrayInnerItem[2])
+
+            const itemtags = arrayInnerItem[2]
+            console.warn(itemtags)
+            itemtags.classList.remove('tagscontainer')
+            itemtags.classList.add('tagscontainer--visible')
         })
 
         value.addEventListener('mouseleave', () =>{
             const innerItem = value.children
             const arrayInnerItem = Array.from(innerItem)
+
             const itemTitle = arrayInnerItem[1]
-            if ( itemTitle.className === 'title__h4 title__project--visible')
+            const itemTags = arrayInnerItem[2]
+            if ( itemTitle.className === 'title__h4 title__project--visible' || (itemTags.className = 'tagsContainer--visible'))
+            
             itemTitle.classList.remove('title__project--visible')
             itemTitle.classList.add('title__project')
+
+            itemTags.classList.remove('tagscontainer--visible')
+            itemTags.classList.add('tagscontainer')
         })
     })
 }
