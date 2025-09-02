@@ -8,15 +8,26 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('scroll' , () => {
     let windowposition = window.scrollY
 
-    if (windowposition >= 1000){
+    if (windowposition > 1000){
         showHeader()
+    } if ( windowposition < 1000){
+        hideHeader()
+        console.log('no funciona')
     }
 })
 
 function showHeader(){
     if(header.className == 'header'){
+        header.classList.remove('header')
         header.classList.add('header--visible')
         console.log('tas mostrando el header')
+    }
+}
+
+function hideHeader(){
+    if(header.className == 'header--visible'){
+        header.classList.remove('header--visible')
+        header.classList.add("header")
     }
 }
 
