@@ -51,6 +51,15 @@ body {
     text-align: center;
 }
 
+.title__h2{
+    font-family: var(--font__Primary);
+    font-size: 88px;
+    margin: 0px;
+    color: var(--primary__base--white);
+    font-weight: 100;
+    text-align: center;
+}
+
 .title__h3{
     font-family: var(--font__Primary);
     font-size: 32px;
@@ -146,6 +155,7 @@ body {
     align-items: center;
     transition: ease-out;
     transition-duration: 1s;
+    justify-content: center;
 
 }
 
@@ -196,11 +206,80 @@ body {
     align-items: center;
     justify-content: center;
     padding-bottom: 124px;
+    flex-direction: column;
+    gap: 56px;
 }
 
 .maincontent__container__bottom--img{
-    width: calc(90% - (124px * 2));
+    width: calc(80% - (124px * 2));
     object-fit: contain;
     border-radius: 50px;
     
+}
+
+
+.gallerycontainer{
+    display: flex;
+    height: fit-content;
+    width: 100%;
+}
+
+.gallerycontainer__innercontainer{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.gallerycontainer__innercontainer__bottom--tabsbutton{
+    display: flex;
+    flex-direction: row;
+}
+
+.gallerycontainer__innercontainer__bottom{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+}
+
+.gallerycontainer__innercontainer__bottom--tabscontent{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.gallerycontainer__innercontainer__bottom--tabscontent img {
+    width: 80%;
+    object-fit: fill;
+    height: 500px;
+}
+
+.gallerycontainer__innercontainer__bottom--tabscontent-tab{
+    display: none;
+}
+
+.gallerycontainer__innercontainer__bottom--tabscontent-tabvisible{
+    display: grid;
+    justify-items: center;
+    grid-template-columns:50% 50%;
+    align-items: center;
+}
+
+.lightbox{
+    display: none;
+}
+
+.lightbox--visible {
+    display: flex;
+    height: 100vw;
+    width: 100vw;
+    position: fixed;
+    background-color: #000000cf;
+    top: 0;
+    z-index: 0;
 }
