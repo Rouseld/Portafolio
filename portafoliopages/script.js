@@ -6,15 +6,20 @@ let tabInactive;
 let tabAllThumbnails;
 let lightbox;
 let lightboxContent;
+let lightboxButton;
+let body;
 
 document.addEventListener('DOMContentLoaded', () => {
     console.log('el dom ha cargado')
     header = document.querySelector(".header");
-    tabButtonInactive = document.querySelector('.tab__button')
-    tabButtonActive = document.querySelector('.tab__button--active')
     lightbox = document.querySelector('.lightbox')
+    lightboxButton = document.querySelector('.lightbox--iconcontainer');
 
-    addEventsThumbnail();
+
+     openLightbox();
+     lightboxButton.addEventListener('click', function() {
+        closeLightbox();
+     })
 })
 
 document.addEventListener('scroll' , () => {
@@ -45,6 +50,9 @@ function hideHeader(){
 
 function toggleTab(){
     
+    tabButtonInactive = document.querySelector('.tab__button')
+    tabButtonActive = document.querySelector('.tab__button--active')
+
     tabActive = document.querySelector('.gallerycontainer__innercontainer__bottom--tabscontent-tabvisible')
     tabInactive = document.querySelector('.gallerycontainer__innercontainer__bottom--tabscontent-tab')
 
@@ -65,7 +73,7 @@ function pageBack(){
     window.location.href = '/index.html';
 }
 
-function addEventsThumbnail(){
+function openLightbox(){
     tabAllThumbnails = document.querySelectorAll('.tabscontent-thumbnail')
     const tabAllThumbnailsArray = Array.from(tabAllThumbnails)
 
@@ -76,16 +84,28 @@ function addEventsThumbnail(){
         value.addEventListener('click',function(){
             console.log('tas haciendo click')
             const attribute = value.getAttribute('data-full-src')
-            console.log(attribute)
+
 
             lightbox.classList.remove('lightbox')
             lightbox.classList.add('lightbox--visible')
 
-            lightboxContent.querySelector('lightbox__content')
-            console.log(lightboxContent)
+            lightboxContent = document.querySelector('.lightbox__content')
+            lightboxContent.src = attribute
+
+            body = document.querySelector('body')
+            body.style.overflow = 'hidden'
 
 
 
         })
     })
 }
+
+
+function closeLightbox(){
+    console.log('esta funcionando')
+    lightbox.classList.remove('lightbox--visible')
+    lightbox.classList.add('lightbox')
+    body.style.overflow = ''
+}
+
