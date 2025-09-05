@@ -361,3 +361,7 @@ body {
     gap: 32px;
     padding-bottom: 64px;
 }
+
+.mobileimg{
+    width: 30%;
+}
