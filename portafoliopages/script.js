@@ -83,13 +83,21 @@ function openLightbox(){
 
         value.addEventListener('click',function(){
             console.log('tas haciendo click')
+            console.log(value.className)
+            
+            lightboxContent = document.querySelector('.lightbox__content')
+
+            if(value.classList.contains('thumbnail__mobile')){
+                lightboxContent.classList.remove('lightbox__content') 
+                lightboxContent.classList.add('lightbox__content-mobile')       
+            }
+
             const attribute = value.getAttribute('data-full-src')
 
 
             lightbox.classList.remove('lightbox')
             lightbox.classList.add('lightbox--visible')
 
-            lightboxContent = document.querySelector('.lightbox__content')
             lightboxContent.src = attribute
 
             body = document.querySelector('body')
