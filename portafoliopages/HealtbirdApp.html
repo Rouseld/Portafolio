@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MarkenguinLmsWebsite</title>
+    <link rel="stylesheet" href="./styles.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <script src="./script.js"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="header__leftcontainer">
+            <p class="text__small">You're watching</p>
+            <h3 class="title__h3">Healthbird App</h3>
+        </div>
+        <div class="header__rightcontainer">
+            <button onclick="pageBack()" class="btn__regular">Go Back <img src="./media/Asset__arrow-left.svg"alt="" class="icon__small"></button>
+        </div>
+    </header>
+    <section class="maincontent__container">
+        <div class="maincontent__container__top">
+            <h1 class="title__h1">Healthbird App</h1>
+            <p class="text__medium">This project is focused on providing for employers and students in which it is an ecosystem that allows registering the activity and grades of the students and on the other hand the verification itself that helps employers validate the potential worker.</p>
+            <div class="maincontent__container__top--buttoncontainer">
+                <button class="btn__regular" onclick="pageBack()">Go Back <img src="./media/Asset__arrow-left.svg"alt="" class="icon__small"></button>
+            </div>       
+        </div>
+        <div class="maincontent__container__bottom">
+            <img src="./media/HealthbirdApp/Home.png" alt="" class="maincontent__container__bottom--img mobileimg">
+        </div>
+    </section>
+    <section class="gallerycontainer">
+        <div class="gallerycontainer__innercontainer">
+            <div class="gallerycontainer__innercontainer__top">
+             <h2 class="title__h2">Project Gallery</h2>
+             <p class="text__medium">This gallery showcases the design of Medpass Website, an all-in-one wellness application. Explore the platform's different views and features, designed to be intuitive and accessible on both desktop and mobile versions.</p>
+            </div>
+            <div class="gallerycontainer__innercontainer__bottom">
+                <div class="gallerycontainer__innercontainer__bottom--tabscontent">
+                    <div class="gallerycontainer__innercontainer__bottom--tabscontent-tabvisible tabmobile">    
+                        <img src="./media/HealthbirdApp/Thumbnail__AllInsurances.png" class="tabscontent-thumbnail thumbnail__mobile" data-full-src="./media/DupontGarage/My Garage.png" alt="">
+                         <img src="./media/HealthbirdApp/Thumbnail__Analytics.png" class="tabscontent-thumbnail thumbnail__mobile" data-full-src="./media/DupontGarage/Car Detail View--Details.png" alt=""> 
+                         <img src="./media/HealthbirdApp/Thumbnail__ConnectDevice.png" class="tabscontent-thumbnail thumbnail__mobile" data-full-src="./media/DupontGarage/Car Detail View--Features.png" alt=""> 
+                         <img src="./media/HealthbirdApp/Thumbnail__DrFinder.png" class="tabscontent-thumbnail thumbnail__mobile" data-full-src="./media/DupontGarage/Car Detail View--Gallery.png" alt="">
+                         <img src="./media/HealthbirdApp/Thumbnail__MyHealth.png" class="tabscontent-thumbnail thumbnail__mobile" data-full-src="./media/DupontGarage/Inquire.png"alt="">
+                         <img src="./media/HealthbirdApp/Thumbnail__Schedule.png" class="tabscontent-thumbnail thumbnail__mobile" data-full-src="./media/DupontGarage/Portafolio.png "alt="">
+                         <img src="./media/HealthbirdApp/Thumbnail__Sleep.png" class="tabscontent-thumbnail thumbnail__mobile" data-full-src="./media/DupontGarage/Car Match -- Preferences.png"alt="">    
+                         <img src="./media/HealthbirdApp/BirdyIA--Conversation.png" class="tabscontent-thumbnail thumbnail__mobile" data-full-src="./media/DupontGarage/Car Match -- Preferences.png"alt="">     
+                         <img src="./media/HealthbirdApp/BirdyIA.png" class="tabscontent-thumbnail thumbnail__mobile" data-full-src="./media/DupontGarage/Car Match -- Preferences.png"alt="">
+                         <img src="./media/HealthbirdApp/BirdyIA--Conversation-Poups.png" class="tabscontent-thumbnail thumbnail__mobile" data-full-src="./media/DupontGarage/Car Match -- Preferences.png"alt="">                 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="prototypecontainer">
+         <h2 class="title__h2">Project Prototype</h2>
+             <p class="text__medium">Experience the flow and functionality of Medpass Website with the interactive prototype. Built in Figma, this simulation allows you to navigate through the most important user journeys.</p>
+        <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="60%" height="800" src="https://embed.figma.com/proto/ipRrlh7tGLbV858NzyNRR1/Car-Garage?node-id=1-3&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A3&show-proto-sidebar=1&embed-host=share" allowfullscreen></iframe>
+    </section>
+    <div class="lightbox">
+        <div class="lightbox--iconcontainer">
+            <p class="text__small">Close Overlay</p>
+            <img src="./media/Icon__xmark.svg" fill="#ffffff" alt="" class="icon__small closebutton">
+        </div> 
+        <img src="" alt="" class="lightbox__content">
+    </div>
+</body>
+</html>
