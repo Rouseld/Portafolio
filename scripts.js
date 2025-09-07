@@ -62,6 +62,12 @@ function hoverProjectItem(){
             console.warn(itemtags)
             itemtags.classList.remove('tagscontainer')
             itemtags.classList.add('tagscontainer--visible')
+
+        })
+
+        value.addEventListener('click', () => {
+             redirection(value)
+             console.log(value)
         })
 
         value.addEventListener('mouseleave', () =>{
@@ -141,6 +147,13 @@ function addEvents(){
   })
 }
 
+
+function redirection(value){
+    console.log(value)
+    let redirectValue = value.getAttribute('data-redirect-url')
+    window.location.href = redirectValue;
+    console.log(redirectValue)
+}
 
 
 /* function toggleSliderOverlay() {

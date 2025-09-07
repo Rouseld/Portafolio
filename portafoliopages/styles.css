@@ -24,6 +24,10 @@ body {
     background-color: var(--bg__color);
 }
 
+a{
+    text-decoration: none;
+}
+
 @font-face {
     font-family: 'Futura Hv BT';
     src: url(./fonts/Futura\ Heavy\ BT.ttf);
