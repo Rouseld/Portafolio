@@ -86,8 +86,10 @@ function openLightbox(){
             console.log(value.className)
             
             lightboxContent = document.querySelector('.lightbox__content')
+            console.log(lightboxContent)
 
             if(value.classList.contains('thumbnail__mobile')){
+                console.log(value)
                 lightboxContent.classList.remove('lightbox__content') 
                 lightboxContent.classList.add('lightbox__content-mobile')       
             }
