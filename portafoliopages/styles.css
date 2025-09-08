@@ -53,6 +53,7 @@ a{
     background-clip: text;
     color: transparent;
     text-align: center;
+    padding: 0px 64px;
 }
 
 .title__h2{
@@ -321,7 +322,7 @@ a{
 
 .lightbox--visible {
     display: flex;
-    height: 100vh;
+    height:98vh;
     width: 100vw;
     position: fixed;
     background-color: #000000cf;
@@ -348,6 +349,8 @@ a{
 .lightbox__content{
     width: 80%;
     object-fit: contain;
+    height: fit-content;
+    padding-bottom: 64px;
 }
 
 .lightbox__content-mobile{
