@@ -439,6 +439,7 @@ body {
     object-fit:cover;
     transition: ease;
     transition-duration: 1s;
+    cursor: pointer;
 }
 
 .section__projects__innercontainer--projectimage:hover{

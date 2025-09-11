@@ -115,8 +115,11 @@ a{
 } 
 
 .icon__small{
-    fill: var(--primary__base--white);
     width: 24px;
+}
+
+.icon__medium{
+    width: 40px;
 }
 
 .btn__regular--outline{
@@ -325,7 +328,7 @@ a{
     height:98vh;
     width: 100vw;
     position: fixed;
-    background-color: #000000cf;
+    background-color: #000000ab;
     top: 0;
     z-index: 1000;
     overflow: auto;
@@ -335,6 +338,8 @@ a{
     gap: 24px;
     flex-direction: column;
     padding-top: 32px;
+    backdrop-filter: blur(10px);
+
 
 }
 
@@ -356,6 +361,7 @@ a{
 .lightbox__content-mobile{
     width: 20%;
     object-fit: contain;
+    padding-bottom: 64px;
 }
 
 
@@ -371,4 +377,23 @@ a{
 
 .mobileimg{
     width: 30%;
+}
+
+.errorcontainer{
+    display: none;
+}
+
+.errorcontainer--visible{
+    display: flex;
+    width: 80%;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.errorcontainer--img{
+    object-fit: contain;
 }

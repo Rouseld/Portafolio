@@ -8,12 +8,14 @@ let lightbox;
 let lightboxContent;
 let lightboxButton;
 let body;
+let errorcontainer;
 
 document.addEventListener('DOMContentLoaded', () => {
     console.log('el dom ha cargado')
     header = document.querySelector(".header");
     lightbox = document.querySelector('.lightbox')
     lightboxButton = document.querySelector('.lightbox--iconcontainer');
+
 
 
      openLightbox();
@@ -82,20 +84,26 @@ function openLightbox(){
         console.log(value)
 
         value.addEventListener('click',function(){
-            console.log('tas haciendo click')
-            console.log(value.className)
             
             lightboxContent = document.querySelector('.lightbox__content')
-            console.log(lightboxContent)
+            errorcontainer = document.querySelector('.errorcontainer')
+            
 
             if(value.classList.contains('thumbnail__mobile')){
                 console.log(value)
                 lightboxContent.classList.remove('lightbox__content') 
                 lightboxContent.classList.add('lightbox__content-mobile')       
-            }
+            }            
 
             const attribute = value.getAttribute('data-full-src')
 
+
+            if(attribute == ''){
+                console.log('no hay imagen')
+                errorcontainer.classList.remove('errorcontainer')
+                errorcontainer.classList.add('errorcontainer--visible')
+
+            }
 
             lightbox.classList.remove('lightbox')
             lightbox.classList.add('lightbox--visible')
@@ -113,6 +121,18 @@ function openLightbox(){
 
 
 function closeLightbox(){
+
+
+    if (lightboxContent.classList.contains('lightbox__content-mobile')){
+        lightboxContent.classList.remove('lightbox__content-mobile')
+        lightboxContent.classList.add('lightbox__content')
+    }
+
+    if (errorcontainer.classList.contains('errorcontainer--visible')){
+        errorcontainer.classList.remove('errorcontainer--visible')
+        errorcontainer.classList.add('errorcontainer')
+    }
+
     console.log('esta funcionando')
     lightbox.classList.remove('lightbox--visible')
     lightbox.classList.add('lightbox')
