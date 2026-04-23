@@ -466,6 +466,10 @@ body {
     font-weight: 600;
 }
 
+.tagscontainer{
+    display: none;
+}
+
 .tagscontainer--visible{
      display: flex;
     flex-direction: row;
