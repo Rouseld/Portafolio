@@ -494,7 +494,7 @@ body {
         font-size: 24px;
     }
 
-    .section__hero,.section__process{
+    .section__hero,.section__process,.section__skills{
         height: fit-content;
         padding: 40px 0px;
     }
@@ -513,4 +513,6 @@ body {
     .section__hero__innercontainer{
         gap: 44px;
     }
+
+
 }
