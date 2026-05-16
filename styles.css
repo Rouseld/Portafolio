@@ -481,3 +481,36 @@ body {
     left: 24px;
 }
 
+@media (max-width: 800px){
+    .title__h1{
+        font-size: 40px;
+    }
+
+    .title__h3{
+        font-size: 40px;
+    }
+
+    .text__medium{
+        font-size: 24px;
+    }
+
+    .section__hero,.section__process{
+        height: fit-content;
+        padding: 40px 0px;
+    }
+
+    .main-slider{
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .main-slider img{
+        height: 350px;
+        width: 500px;
+        object-fit: contain;
+    }
+    
+    .section__hero__innercontainer{
+        gap: 44px;
+    }
+}
