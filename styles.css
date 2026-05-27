@@ -442,7 +442,7 @@ body {
     cursor: pointer;
 }
 
-.section__projects__innercontainer--projectimage:hover{
+.section__projects__innercontainer--projectimage--active{
     filter: opacity(0.5);
 }
 
@@ -515,4 +515,23 @@ body {
     }
 
 
+}
+
+@media (max-width:450px){
+    .skills{
+        width: stretch;
+        height: 64px;
+        padding: 12px 12px;
+    }
+
+    .section__skills__innercontainer--bottom{
+    display: grid;
+    gap: 16px;
+    justify-content: center;
+    grid-template-columns: auto auto;
+    width: 100%;
+    grid-auto-flow: row;
+    justify-items: center;
+    margin: 0px;
+    }
 }

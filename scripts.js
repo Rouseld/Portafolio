@@ -49,6 +49,13 @@ function hoverProjectItem(){
     console.log(itemArray)
     itemArray.forEach( (value) => {
         value.addEventListener('mouseover', () =>{
+
+            console.log(value);
+
+            const Container = value
+            value.classList.remove('section__projects__innercontainer--projectimage');
+            value.classList.add('section__projects__innercontainer--projectimage--active');
+
             const innerItem = value.children
             const arrayInnerItem = Array.from(innerItem)
 
@@ -56,10 +63,8 @@ function hoverProjectItem(){
             itemTitle.classList.remove('title__project')
             itemTitle.classList.add('title__project--visible')
 
-            console.warn(arrayInnerItem[2])
 
             const itemtags = arrayInnerItem[2]
-            console.warn(itemtags)
             itemtags.classList.remove('tagscontainer')
             itemtags.classList.add('tagscontainer--visible')
 
@@ -74,8 +79,12 @@ function hoverProjectItem(){
             const innerItem = value.children
             const arrayInnerItem = Array.from(innerItem)
 
+            console.log(innerItem)
+
             const itemTitle = arrayInnerItem[1]
             const itemTags = arrayInnerItem[2]
+
+            console.log(itemTags + itemTitle)
             if ( itemTitle.className === 'title__h4 title__project--visible' || (itemTags.className = 'tagsContainer--visible'))
             
             itemTitle.classList.remove('title__project--visible')
