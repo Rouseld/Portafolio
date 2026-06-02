@@ -433,6 +433,27 @@ body {
     overflow: hidden;
 }
 
+.projectItem__overlayContainer{
+    background-color: none;
+    z-index: 0;
+    width: stretch;
+    position: absolute;
+    height: 350px;
+    transition: ease;
+    transition-duration: 800ms;
+}
+
+
+.projectItem__overlayContainer--Active{
+    background-color: #00000055;
+    width: stretch;
+    z-index: 0;
+    position: absolute;
+    height: 350px;
+    transition-duration: 800ms;
+}
+
+
 .section__projects__innercontainer--projectimage{
     width: 100%;
     height: 100%;
@@ -442,9 +463,7 @@ body {
     cursor: pointer;
 }
 
-.section__projects__innercontainer--projectimage--active{
-    filter: opacity(0.5);
-}
+
 
 
 .title__project,.tagcontainer{

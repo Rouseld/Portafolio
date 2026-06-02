@@ -43,30 +43,29 @@ function addAnimation() {
     });
 }
 
+function ToggleProjectItem(itemHTML,cssClass1,cssClass2){
+    itemHTML.classList.remove(cssClass1);
+    itemHTML.classList.add(cssClass2);
+}
+
 function hoverProjectItem(){
 
     const itemArray = Array.from(projectItem)
-    console.log(itemArray)
     itemArray.forEach( (value) => {
         value.addEventListener('mouseover', () =>{
+            const containerOverlay = value
 
-            console.log(value);
+            const innerOverlay = value.children[1]
+            ToggleProjectItem(innerOverlay,'projectItem__overlayContainer','projectItem__overlayContainer--Active')
 
-            const Container = value
-            value.classList.remove('section__projects__innercontainer--projectimage');
-            value.classList.add('section__projects__innercontainer--projectimage--active');
-
-            const innerItem = value.children
+            const innerItem = innerOverlay.children;
             const arrayInnerItem = Array.from(innerItem)
 
-            const itemTitle =arrayInnerItem[1]
-            itemTitle.classList.remove('title__project')
-            itemTitle.classList.add('title__project--visible')
+            const itemTitle =arrayInnerItem[0]
+            ToggleProjectItem(itemTitle,'title__project','title__project--visible')
 
-
-            const itemtags = arrayInnerItem[2]
-            itemtags.classList.remove('tagscontainer')
-            itemtags.classList.add('tagscontainer--visible')
+            const itemtags = arrayInnerItem[1]
+            ToggleProjectItem(itemtags,'tagscontainer','tagscontainer--visible')
 
         })
 
@@ -76,22 +75,21 @@ function hoverProjectItem(){
         })
 
         value.addEventListener('mouseleave', () =>{
-            const innerItem = value.children
-            const arrayInnerItem = Array.from(innerItem)
+            const innerItemOverlay = value.children[1]
+            const arrayInnerItem = Array.from(innerItemOverlay.children)
 
-            console.log(innerItem)
+            console.log(innerItemOverlay)
+            console.warn(arrayInnerItem)
 
-            const itemTitle = arrayInnerItem[1]
-            const itemTags = arrayInnerItem[2]
+            const itemTitle = arrayInnerItem[0]
+            const itemTags = arrayInnerItem[1]
 
             console.log(itemTags + itemTitle)
             if ( itemTitle.className === 'title__h4 title__project--visible' || (itemTags.className = 'tagsContainer--visible'))
-            
-            itemTitle.classList.remove('title__project--visible')
-            itemTitle.classList.add('title__project')
 
-            itemTags.classList.remove('tagscontainer--visible')
-            itemTags.classList.add('tagscontainer')
+            ToggleProjectItem(itemTitle,'title__project--visible','title__project');
+            ToggleProjectItem(itemTags,'tagscontainer--visible','tagscontainer')
+            ToggleProjectItem(innerItemOverlay, 'projectItem__overlayContainer--Active', 'projectItem__overlayContainer')
         })
     })
 }
