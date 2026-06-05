@@ -451,6 +451,7 @@ body {
     position: absolute;
     height: 350px;
     transition-duration: 800ms;
+    cursor: pointer;
 }
 
 
