@@ -433,6 +433,10 @@ body {
     overflow: hidden;
 }
 
+.section__projects__innercontainer--projectitem:hover{
+    flex-grow: 100px;
+}
+
 .projectItem__overlayContainer{
     background-color: none;
     z-index: 0;
@@ -554,4 +558,8 @@ body {
     justify-items: center;
     margin: 0px;
     }
+}
+
+.react_title{
+    color: white;
 }
