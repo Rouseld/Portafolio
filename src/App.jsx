@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
-import { HeroSlider } from './HeroSlider'
+import { HeroSliderItem } from './HeroSliderItem'
+import {InfiniteSlider} from "./InfiniteSlider"
 
 function Inicio() {
   return (
@@ -14,11 +15,14 @@ function Inicio() {
     </div>
 
    <section className="section__hero__innercontainer--bottom">
-      <div className="hero__innercontainer__bottom__slider">
-        <HeroSlider imgUrl='Asset__PortafolioImg--2.png' pageUrl='DupontGarageApp.html' index='0'/>
-        <HeroSlider imgUrl='Asset__PortafolioImg--7.png' pageUrl='DupontGarageApp.html' index='1'/>
-        <HeroSlider imgUrl='Asset__PortafolioImg--2.png' pageUrl='DupontGarageApp.html' index='2'/>
-      </div>
+
+    <InfiniteSlider SliderItems={
+      <>
+      <HeroSliderItem imgUrl='Asset__PortafolioImg--2.png' pageUrl='DupontGarageApp.html' index='0'/>
+        <HeroSliderItem imgUrl='Asset__PortafolioImg--7.png' pageUrl='DupontGarageApp.html' index='1'/>
+        <HeroSliderItem imgUrl='Asset__PortafolioImg--3.png' pageUrl='DupontGarageApp.html' index='2'/>
+        <HeroSliderItem imgUrl='Asset__PortafolioImg--4.png' pageUrl='DupontGarageApp.html' index='3'/></>
+    }> </InfiniteSlider>
     </section>
     </>
   )
@@ -34,3 +38,4 @@ export default function App() {
     </BrowserRouter>
   )
 }
+
