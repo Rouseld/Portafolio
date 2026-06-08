@@ -1,7 +1,8 @@
-export function HeroSlider({imgUrl, pageUrl, sliderTitle, sliderTag1, sliderTag2}){
+import { easeIn, easeOut, motion } from "motion/react"
+export function HeroSlider({imgUrl, pageUrl, sliderTitle, sliderTag1, sliderTag2, index}){
     return(
-    <div className="hero__sliderItem">
-        <a href={`./portafoliopages/${pageUrl}`}><img src={`../media/${imgUrl}`} alt="" /></a>
+    <motion.div transition={{duration:0.8 , ease:easeOut,delay:index*0.4}} className="hero__sliderItem" initial={{opacity:0, scale:1.5}}  animate={{opacity:1,scale:1}} style={{ backgroundImage: `url(/media/${imgUrl}) ` }}>
+        <a href={`./portafoliopages/${pageUrl}`}>
         <div className="hero__slider--1-content slider-overlay--hidden">
             <div className="hero__slider--1-innercontent">
              <img src="../media/icon__link.svg" alt="" className="icon__large" />
@@ -12,6 +13,7 @@ export function HeroSlider({imgUrl, pageUrl, sliderTitle, sliderTag1, sliderTag2
              </div>
             </div>
         </div>   
-    </div>
+        </a>
+    </motion.div>
     )
 }

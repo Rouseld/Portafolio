@@ -15,7 +15,9 @@ function Inicio() {
 
    <section className="section__hero__innercontainer--bottom">
       <div className="hero__innercontainer__bottom__slider">
-        <HeroSlider imgUrl='Asset__PortafolioImg--2.png' pageUrl='DupontGarageApp.html' />
+        <HeroSlider imgUrl='Asset__PortafolioImg--2.png' pageUrl='DupontGarageApp.html' index='0'/>
+        <HeroSlider imgUrl='Asset__PortafolioImg--7.png' pageUrl='DupontGarageApp.html' index='1'/>
+        <HeroSlider imgUrl='Asset__PortafolioImg--2.png' pageUrl='DupontGarageApp.html' index='2'/>
       </div>
     </section>
     </>

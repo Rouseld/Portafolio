@@ -167,7 +167,8 @@ body {
 
 .section__hero__innercontainer--bottom {
     align-items: flex-start;
-    overflow: hidden;
+    overflow: visible;
+    height: 500px;
 }
 
 .hero__innercontainer__bottom__slider {
@@ -175,18 +176,30 @@ body {
     flex-wrap: nowrap;
     flex-direction: row;
     align-items: flex-start;
-    justify-content: flex-start;
+    justify-content: center;
     width: max-content;
-    animation: sliders 40s linear infinite;
+    height: inherit;
+    gap: 32px;
 }
 
 
-.hero__slider--1, .hero__slider--2, .hero__slider--3, .hero__slider--4, .hero__slider--5, .hero__slider--6 {
+.hero__sliderItem {
     padding-left: 24px;
     padding-right: 24px;
     position: relative;
+    overflow: visible;
+    width: 500px;
+    height: 400px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.hero__sliderItem a{
+    width: 100%;
+    display: flex;
     overflow: hidden;
 }
+
 
 .hero__slider--1-tags{
     display: flex;
