@@ -1,10 +1,18 @@
 import { easeIn, easeOut, motion, useAnimate,} from "motion/react"
-import {useEffect, useRef,} from 'react'
+import React,{useEffect, useRef,} from 'react'
 
 
 export function InfiniteSlider({SliderItems}){
     
     const [scope,animate] = useAnimate();
+
+    const connection = () =>{
+        console.log('hola')
+    }
+
+    const SliderItemsWithConnection = React.Children.map(SliderItems, (SliderItem) => {
+        return React.cloneElement(SliderItem, { saludar: connection });
+    });
 
     const remoteControl = useRef(null);
 
@@ -29,8 +37,8 @@ export function InfiniteSlider({SliderItems}){
         onMouseEnter={()=>remoteControl.current.pause()}
         onMouseLeave={()=>remoteControl.current.play()}
         >       
-             {SliderItems}
-             {SliderItems}
+             {SliderItemsWithConnection}
+             {SliderItemsWithConnection}
     
         </motion.div>
     )
