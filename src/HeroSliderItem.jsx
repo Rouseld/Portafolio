@@ -1,13 +1,13 @@
 import { easeIn, easeOut, motion, propEffect } from "motion/react"
 import { filter } from "motion/react-client"
-export function HeroSliderItem({imgUrl, pageUrl, sliderTitle, sliderTag1, sliderTag2, index, id,PauseAnimation,PlayAnimation}){
+export function HeroSliderItem({imgUrl, pageUrl, sliderTitle, sliderTag1, sliderTag2, index, id,initialEvents,PlayAnimation}){
     return(
     <motion.div 
     transition={{duration:0.6 , ease:easeOut,delay:index*0.4}} 
     className="hero__sliderItem" 
     initial={{opacity:0, scale:1.5, filter:"blur(20px)"}}  
     animate={{opacity:1,scale:1,filter:"blur(0px)"}} 
-    onClick={PauseAnimation}
+    onClick={initialEvents}
     onMouseLeave={PlayAnimation}
     style={{ backgroundImage: `url(/media/${imgUrl}) `}}>
 

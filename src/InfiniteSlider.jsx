@@ -1,15 +1,29 @@
 import { easeIn, easeOut, motion, useAnimate,} from "motion/react"
-import React,{useEffect, useRef,} from 'react'
+import React,{useEffect, useRef, useState,} from 'react'
 
 
 export function InfiniteSlider({SliderItems}){
-    
-    const connection = () =>{
-        console.log('hola')
+
+    const [itemInactive,itemactive] = useState(false);
+
+    const focusSliderItem = () =>{
+        if (itemactive === true){
+            itemInactive(false)
+        } else {
+            itemactive(true);
+        }
     }
 
+    const allEvents = () => {
+        connection(),
+        secondConnection(),
+        PauseAniamtion();
+        console.log('funciona')
+    }
+
+
      const SliderItemsWithConnection = React.Children.map(SliderItems, (SliderItem) => {
-        return React.cloneElement(SliderItem, { PauseAnimation: PauseAniamtion, PlayAnimation:PlayAnimation });
+        return React.cloneElement(SliderItem, { initialEvents:allEvents, PlayAnimation:PlayAnimation, });
     });
 
     const [scope,animate] = useAnimate(); 
@@ -36,10 +50,6 @@ export function InfiniteSlider({SliderItems}){
                 }
             }
         },[animate])
-
-   
-
-
 
     return(
 
