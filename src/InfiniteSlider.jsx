@@ -4,26 +4,16 @@ import React,{useEffect, useRef, useState,} from 'react'
 
 export function InfiniteSlider({SliderItems}){
 
-    const [itemInactive,itemactive] = useState(false);
-
-    const focusSliderItem = () =>{
-        if (itemactive === true){
-            itemInactive(false)
-        } else {
-            itemactive(true);
-        }
-    }
+    const [itemActive,setItemActive] = useState(null);
 
     const allEvents = () => {
-        connection(),
-        secondConnection(),
         PauseAniamtion();
         console.log('funciona')
     }
 
 
      const SliderItemsWithConnection = React.Children.map(SliderItems, (SliderItem) => {
-        return React.cloneElement(SliderItem, { initialEvents:allEvents, PlayAnimation:PlayAnimation, });
+        return React.cloneElement(SliderItem, { initialEvents:allEvents, PlayAnimation:PlayAnimation, setItemActive:setItemActive, itemActive:itemActive});
     });
 
     const [scope,animate] = useAnimate(); 
