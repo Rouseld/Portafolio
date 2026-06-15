@@ -6,13 +6,17 @@ export function HeroSliderItem({imgUrl, pageUrl, sliderTitle, sliderTag1, slider
     const isItemActive = itemActive === index;
 
     const CardItem = useRef(null);
-    console.log(CardItem.current)
+    
+  
 
     function focusItemSlider() {
         setItemActive(index)
-        console.log(itemActive)
-        console.log(index)
         if(initialEvents) initialEvents();
+        const cardItemPositionX = CardItem.current.getBoundingClientRect().left;
+        const cardItemWidth = CardItem.current.getBoundingClientRect().width;
+        const viewPort = window.innerWidth;
+        const viewPortCenter = viewPort / 2;
+        console.log(cardItemPositionX,cardItemWidth, viewPort, viewPortCenter)
     };
 
     function closeFocusItemSlider(){
