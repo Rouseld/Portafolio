@@ -5,8 +5,8 @@ export function HeroSliderItem({imgUrl, pageUrl, sliderTitle, sliderTag1, slider
     
     const isItemActive = itemActive === index;
 
-    const CardItemTest = useRef(null);
-    console.log(CardItemTest.current)
+    const CardItem = useRef(null);
+    console.log(CardItem.current)
 
     function focusItemSlider() {
         setItemActive(index)
