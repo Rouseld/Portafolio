@@ -6,6 +6,12 @@ export function InfiniteSlider({SliderItems}){
 
     const [itemActive,setItemActive] = useState(null);
 
+    const [sliderMoveX, setSliderMoveX] = useState(0);
+
+    const centerSliderItem = (moveValueX) => {
+        setSliderMoveX(prev => prev + moveValueX);
+    }
+ 
     const allEvents = () => {
         PauseAniamtion();
         console.log('funciona')
@@ -13,7 +19,7 @@ export function InfiniteSlider({SliderItems}){
 
 
      const SliderItemsWithConnection = React.Children.map(SliderItems, (SliderItem) => {
-        return React.cloneElement(SliderItem, { initialEvents:allEvents, PlayAnimation:PlayAnimation, setItemActive:setItemActive, itemActive:itemActive});
+        return React.cloneElement(SliderItem, { initialEvents:allEvents, PlayAnimation:PlayAnimation, setItemActive:setItemActive, itemActive:itemActive, itemPositionX:centerSliderItem});
     });
 
     const [scope,animate] = useAnimate(); 
@@ -30,7 +36,7 @@ export function InfiniteSlider({SliderItems}){
       useEffect(() =>{
             remoteControl.current = animate(
                 scope.current,
-                {x: ['0','-50%']},
+                {x: ['-25','-50%']},
                 {ease:'linear',duration:16,repeat:Infinity}
             );
     
@@ -43,12 +49,19 @@ export function InfiniteSlider({SliderItems}){
 
     return(
 
-        <motion.div className="hero__innercontainer__bottom__slider" 
-        ref={scope}
+       <motion.div 
+            animate={{ x: sliderMoveX }}
+            transition={{ type: "spring", stiffness: 100, damping: 20 }}
+            style={{ width: "100%", overflow: "visible" }}
         >       
-             {SliderItemsWithConnection}
-             {SliderItemsWithConnection}
-    
+             <motion.div 
+                 className="hero__innercontainer__bottom__slider" 
+                 ref={scope}
+             >
+                 {SliderItemsWithConnection}
+                 {SliderItemsWithConnection}
+             </motion.div>
+             
         </motion.div>
     )
 }

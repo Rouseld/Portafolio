@@ -1,7 +1,7 @@
 import { easeIn, easeOut, motion, propEffect } from "motion/react"
 import { filter } from "motion/react-client"
 import { useRef } from "react";
-export function HeroSliderItem({imgUrl, pageUrl, sliderTitle, sliderTag1, sliderTag2, index, id,initialEvents,PlayAnimation,itemActive, setItemActive}){
+export function HeroSliderItem({imgUrl, pageUrl, sliderTitle, sliderTag1, sliderTag2, index, id,initialEvents,PlayAnimation,itemActive, setItemActive,itemPositionX}){
     
     const isItemActive = itemActive === index;
 
@@ -16,14 +16,20 @@ export function HeroSliderItem({imgUrl, pageUrl, sliderTitle, sliderTag1, slider
         const cardItemPositionX = CardItem.current.getBoundingClientRect().left;
         const cardItemWidth = CardItem.current.getBoundingClientRect().width;
         const cardItemCenter = cardItemPositionX + (cardItemWidth / 2)
+
         const viewPort = window.innerWidth;
         const viewPortCenter = viewPort / 2;
+
+        const DistanceMoveX = viewPortCenter - cardItemCenter;
+
+        if(itemPositionX) itemPositionX(DistanceMoveX);
         console.log(cardItemPositionX,cardItemWidth, viewPort, viewPortCenter)
     };
 
     function closeFocusItemSlider(){
         setItemActive(null)
         if(PlayAnimation)PlayAnimation();
+       
     }
 
     return(
