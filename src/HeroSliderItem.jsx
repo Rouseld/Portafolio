@@ -12,8 +12,10 @@ export function HeroSliderItem({imgUrl, pageUrl, sliderTitle, sliderTag1, slider
     function focusItemSlider() {
         setItemActive(index)
         if(initialEvents) initialEvents();
+
         const cardItemPositionX = CardItem.current.getBoundingClientRect().left;
         const cardItemWidth = CardItem.current.getBoundingClientRect().width;
+        const cardItemCenter = cardItemPositionX + (cardItemWidth / 2)
         const viewPort = window.innerWidth;
         const viewPortCenter = viewPort / 2;
         console.log(cardItemPositionX,cardItemWidth, viewPort, viewPortCenter)
