@@ -28,7 +28,7 @@ export function HeroSliderItem({imgUrl, pageUrl, sliderTitle, sliderTag1, slider
     animate={{opacity:1,scale: isItemActive ? 1.2 : 1,filter:"blur(0px)", transitionDuration:200,zIndex: isItemActive ? 10:1,}} 
     onClick={focusItemSlider}
     onMouseLeave={closeFocusItemSlider}
-    ref={CardItemTest}
+    ref={CardItem}
     style={{ backgroundImage: `url(/media/${imgUrl}) `}}>
 
         <a href={`./portafoliopages/${pageUrl}`}>
