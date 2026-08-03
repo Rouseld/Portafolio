@@ -1,7 +1,6 @@
 import { easeIn, easeOut, motion, useAnimate,} from "motion/react"
 import React,{useEffect, useRef, useState,} from 'react'
 
-
 export function InfiniteSlider({SliderItems}){
 
     const [itemActive,setItemActive] = useState(null);
@@ -16,7 +15,6 @@ export function InfiniteSlider({SliderItems}){
         PauseAniamtion();
         console.log('funciona')
     }
-
 
      const SliderItemsWithConnection = React.Children.map(SliderItems, (SliderItem) => {
         return React.cloneElement(SliderItem, { initialEvents:allEvents, PlayAnimation:PlayAnimation, setItemActive:setItemActive, itemActive:itemActive, itemPositionX:centerSliderItem});
@@ -36,7 +34,7 @@ export function InfiniteSlider({SliderItems}){
       useEffect(() =>{
             remoteControl.current = animate(
                 scope.current,
-                {x: ['-25','-50%']},
+                {x: ['-25%','-50%']},
                 {ease:'linear',duration:16,repeat:Infinity}
             );
     
@@ -60,9 +58,10 @@ export function InfiniteSlider({SliderItems}){
              >
                  {SliderItemsWithConnection}
                  {SliderItemsWithConnection}
+                 {SliderItemsWithConnection}
+                 {SliderItemsWithConnection}
              </motion.div>
              
         </motion.div>
     )
 }
-

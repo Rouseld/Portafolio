@@ -1,13 +1,17 @@
 import { easeIn, easeOut, motion, propEffect } from "motion/react"
 import { filter } from "motion/react-client"
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
+
 export function HeroSliderItem({imgUrl, pageUrl, sliderTitle, sliderTag1, sliderTag2, index, id,initialEvents,PlayAnimation,itemActive, setItemActive,itemPositionX}){
     
     const isItemActive = itemActive === index;
 
     const CardItem = useRef(null);
+    const [hasMounted, setHasMounted] = useState(false);
     
-  
+    useEffect(() => {
+        setHasMounted(true);
+    }, []);
 
     function focusItemSlider() {
         setItemActive(index)
@@ -29,15 +33,14 @@ export function HeroSliderItem({imgUrl, pageUrl, sliderTitle, sliderTag1, slider
     function closeFocusItemSlider(){
         setItemActive(null)
         if(PlayAnimation)PlayAnimation();
-       
     }
 
     return(
     <motion.div 
-    transition={{duration:0.6 , ease:easeOut,delay:index*0.4}} 
+    transition={{duration: isItemActive ? 1 : 0.6 , ease:easeOut,delay: !hasMounted ? index * 0.6 : 0}} 
     className="hero__sliderItem" 
     initial={{opacity:0, scale: 1.5, filter:"blur(20px)"}}  
-    animate={{opacity:1,scale: isItemActive ? 1.2 : 1,filter:"blur(0px)", transitionDuration:200,zIndex: isItemActive ? 10:1,}} 
+    animate={{opacity:1,scale: isItemActive ? 1.2 : 1,filter:"blur(0px)" ,transitionDuration:200, zIndex: isItemActive ? 10:1}} 
     onClick={focusItemSlider}
     onMouseLeave={closeFocusItemSlider}
     ref={CardItem}
