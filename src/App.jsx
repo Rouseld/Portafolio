@@ -1,19 +1,21 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
-import { HeroSliderItem } from './HeroSliderItem'
-import {InfiniteSlider} from "./InfiniteSlider"
+import { HeroSliderItem } from './Pages/Homepag/HeroSliderItem'
+import { InfiniteSlider } from './Components/InfiniteSlider'
+import { SectionTextContent } from './Components/SectionTextContent'
 
 function Inicio() {
 
  
   return (
     <>
-    <div style={{ textAlign: 'center', marginTop: '50px', fontFamily: 'sans-serif' }}>
       <Helmet>  
         <meta name="description" content="Bienvenido a mi nuevo portafolio." />
       </Helmet>
-      <h1 className='react_title'>🚀 ¡React y Vite están vivos!</h1>
-      <p>La estructura funciona a la perfección.</p>
+    <div style={{ textAlign: 'center', marginTop: '50px', fontFamily: 'sans-serif' }}>
+      <SectionTextContent className="title__h1" title={<>I’m Rouseld<span>🙌</span></>} 
+      description="An UI/UX Designer and Web Developer, optimizing digital platforms with a strategic marketing vision to drive conversion and business growth."
+      TitleHtmlTag="h1"/>
     </div>
 
    <section className="section__hero__innercontainer--bottom">
