@@ -1,7 +1,7 @@
 html, body {
     margin: 0px;
     padding: 0px;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 :root {
@@ -189,10 +189,6 @@ body {
     padding-right: 24px;
     position: relative;
     overflow: visible;
-    width: 500px;
-    height: 400px;
-    background-size: contain;
-    background-repeat: no-repeat;
 }
 
 .hero__sliderItem a{

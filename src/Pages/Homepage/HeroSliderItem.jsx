@@ -44,9 +44,10 @@ export function HeroSliderItem({imgUrl, pageUrl, sliderTitle, sliderTag1, slider
     onClick={focusItemSlider}
     onMouseLeave={closeFocusItemSlider}
     ref={CardItem}
-    style={{ backgroundImage: `url(/media/${imgUrl}) `}}>
+    >
 
         <a href={`./portafoliopages/${pageUrl}`}>
+        <img src={`/media/${imgUrl}`} alt="" />
         <div className="hero__slider--1-content slider-overlay--hidden">
             <div className="hero__slider--1-innercontent">
              <img src="../media/icon__link.svg" alt="" className="icon__large" />
