@@ -185,6 +185,8 @@ body {
 
 
 .hero__sliderItem {
+    width: 1000px;
+    aspect-ratio: 4/3;
     padding-left: 24px;
     padding-right: 24px;
     position: relative;
@@ -193,8 +195,16 @@ body {
 
 .hero__sliderItem a{
     width: 100%;
+    height: 100%;
     display: flex;
     overflow: hidden;
+    border-radius: 24px;
+}
+
+.hero__sliderItem img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 
@@ -513,6 +523,17 @@ body {
     position:absolute;
     bottom: 0px;
     left: 24px;
+}
+
+@media (max-width:1440px){ /* Laptop Responsive*/
+    .hero__sliderItem {
+    width: 700px;
+    padding-left: 8px;
+    padding-right: 8px;
+ }
+ .hero__innercontainer__bottom__slider {
+    gap: 18px;
+}
 }
 
 @media (max-width: 800px){

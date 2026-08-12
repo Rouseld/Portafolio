@@ -50,7 +50,7 @@ export function InfiniteSlider({SliderItems}){
        <motion.div 
             animate={{ x: sliderMoveX }}
             transition={{ type: "spring", stiffness: 100, damping: 20 }}
-            style={{ width: "100%", overflow: "visible" }}
+            style={{ width: "100%", overflow: "visible", height:"inherit" }}
         >       
              <motion.div 
                  className="hero__innercontainer__bottom__slider" 

@@ -14,7 +14,6 @@ export function ReasonSection(){
                     ></SectionTextContent>  
                 </div>
                 <div className="section__process__innercontainer__bottom">
-
                 </div>
             </div>
         </section>
