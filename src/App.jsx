@@ -4,7 +4,7 @@ import {HeroSliderItem} from './Pages/Homepage/HeroSliderItem'
 import { InfiniteSlider } from './Components/InfiniteSlider'
 import { SectionTextContent } from './Components/SectionTextContent'
 import { HeroSection } from './Pages/Homepage/HeroSection'
-import { ReasonSection } from './Pages/Homepage/ReasonsSection'
+import { SectionProcess } from './Pages/Homepage/SectionProcess'
 
 function Inicio() {
 
@@ -16,7 +16,7 @@ function Inicio() {
       </Helmet>
 
      <HeroSection></HeroSection>
-     <ReasonSection></ReasonSection>
+     <SectionProcess></SectionProcess>
      
 
     </>

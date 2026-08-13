@@ -1,6 +1,6 @@
 import { SectionTextContent } from "../../Components/SectionTextContent";
 
-export function ReasonSection(){
+export function SectionProcess(){
     return(
         <>
 
