@@ -269,7 +269,7 @@ body {
     gap: 64px
 }
 
-.section__process__innercontanier__top {
+.section__process__innercontainer__top {
     width: 80%;
     max-width: 1160px;
     display: flex;
@@ -523,6 +523,14 @@ body {
     position:absolute;
     bottom: 0px;
     left: 24px;
+}
+
+/* Components CSS */
+
+.SectionTextContenContainer{
+    gap: 32px;
+    display: flex;
+    flex-direction: column;
 }
 
 @media (max-width:1440px){ /* Laptop Responsive*/

@@ -1,24 +1,23 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
-import {HeroSliderItem} from './Pages/Homepage/HeroSliderItem'
-import { InfiniteSlider } from './Components/InfiniteSlider'
-import { SectionTextContent } from './Components/SectionTextContent'
+import { Header } from './Global/Header'
 import { HeroSection } from './Pages/Homepage/HeroSection'
 import { SectionProcess } from './Pages/Homepage/SectionProcess'
+import { SectionSkills } from './Pages/Homepage/SectionSkills'
+import { SectionProjects } from './Pages/Homepage/SectionProjects'
 
 function Inicio() {
-
- 
   return (
     <>
       <Helmet>  
         <meta name="description" content="Bienvenido a mi nuevo portafolio." />
       </Helmet>
 
-     <HeroSection></HeroSection>
-     <SectionProcess></SectionProcess>
-     
-
+      <Header />
+      <HeroSection />
+      <SectionProcess />
+      <SectionSkills />
+      <SectionProjects />
     </>
   )
 }
@@ -33,4 +32,3 @@ export default function App() {
     </BrowserRouter>
   )
 }
-
