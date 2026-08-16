@@ -44,9 +44,10 @@ body {
     height: var(--height__large);
     width: 100%;
     display: flex;
-    align-items: center;
+    align-items: start;
     animation: gradientAnimation 5s linear infinite;
     background-repeat: repeat;
+    padding-top: 64px;
 }
 
 
@@ -541,7 +542,11 @@ body {
  }
  .hero__innercontainer__bottom__slider {
     gap: 18px;
-}
+ }
+ .section__hero{
+   height: auto;
+   padding-bottom: 120px;
+ }
 }
 
 @media (max-width: 800px){
