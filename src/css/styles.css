@@ -534,6 +534,11 @@ body {
     flex-direction: column;
 }
 
+.Text{
+    color: white;
+    font-size: 64px;
+}
+
 @media (max-width:1440px){ /* Laptop Responsive*/
     .hero__sliderItem {
     width: 700px;
@@ -548,6 +553,8 @@ body {
    padding-bottom: 120px;
  }
 }
+
+
 
 @media (max-width: 800px){
     .title__h1{
