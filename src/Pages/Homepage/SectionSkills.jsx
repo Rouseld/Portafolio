@@ -1,5 +1,6 @@
 import { SectionTextContent } from "../../Components/SectionTextContent";
 import { SkillCard } from "../../Components/SkillCard";
+import { FadeInUp } from "../../Components/FadeInUp";
 
 export function SectionSkills() {
   return (
@@ -13,7 +14,7 @@ export function SectionSkills() {
             description="This is where my creative vision and technical skills converge. I leverage a robust suite of tools and platforms to forge the link between aesthetic design and functional development, crafting digital experiences that are both visually compelling and seamlessly executed."
           />
         </div>
-        <div className="section__skills__innercontainer--bottom">
+        <FadeInUp delay={0.2} className="section__skills__innercontainer--bottom">
           <SkillCard iconUrl="/media/Asset__Skill--1.svg" alt="Skill 1" />
           <SkillCard iconUrl="/media/Asset__Skill--2.svg" alt="Skill 2" />
           <SkillCard iconUrl="/media/Asset__Skill--3.svg" alt="Skill 3" />
@@ -34,7 +35,7 @@ export function SectionSkills() {
           <SkillCard iconUrl="/media/Icon__Gohighlevel.webp" alt="GoHighLevel" />
           <SkillCard iconUrl="/media/Icon__Shopify.webp" alt="Shopify" />
           <SkillCard iconUrl="/media/Icon__GoogleLocker.svg" alt="Google Locker" />
-        </div>
+        </FadeInUp>
       </div>
     </section>
   );

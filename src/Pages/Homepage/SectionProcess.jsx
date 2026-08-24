@@ -1,5 +1,6 @@
 import { SectionTextContent } from "../../Components/SectionTextContent";
 import { Slider } from "../../Components/Slider";
+import { FadeInUp } from "../../Components/FadeInUp";
 
 export function SectionProcess(){
     return(
@@ -7,14 +8,19 @@ export function SectionProcess(){
 
         <section className="section__process">
             <div className="section__process--innercontainer">
-                <div className="section__process__innercontainer__top">
+                <FadeInUp className="section__process__innercontainer__top">
                     <SectionTextContent TitleHtmlTag={"h2"} 
-                    title={<>The professional who combines <span style={{ color: '#D1B5FF' }}>design</span>, <span style={{ color: '#726AFF' }}>code</span>, and <span style={{ color: '#FBFFC1' }}>strategy</span> to drive your business forward</>}
+                    title={"The professional who combines design, code, and strategy to drive your business forward"}
+                    highlightedWords={[
+                      { word: "design", color: "#D1B5FF" },
+                      { word: "code", color: "#726AFF" },
+                      { word: "strategy", color: "#FBFFC1" }
+                    ]}
                     className={"title__h3"} 
                     description={"My process integrates the conceptualization of intuitive user experiences (UX/UI) with technical implementation in WordPress, ensuring websites that are not only visually appealing but also highly functional. Thanks to my experience in digital marketing and paid campaigns, each project is optimized from the start to drive conversions and business growth."}
                     ></SectionTextContent>  
-                </div>
-                <div className="section__process__innercontainer__bottom">
+                </FadeInUp>
+                <FadeInUp delay={0.2} className="section__process__innercontainer__bottom">
                     <Slider>
                         <div className="section__process__innercontainer--slideritem process__slider--1">
                             <h4 className="title__h4">Conversion-Driven Design</h4>
@@ -37,7 +43,7 @@ export function SectionProcess(){
                             <img src="/media/Asset__SliderItem4.png" alt="" />
                         </div>
                     </Slider>
-                </div>
+                </FadeInUp>
             </div>
         </section>
         </>

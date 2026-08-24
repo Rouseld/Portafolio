@@ -1,9 +1,6 @@
 export function ProjectCard({ imageUrl, redirectUrl, title, tags = [] }) {
   return (
-    <div
-      className="section__projects__innercontainer--projectitem"
-      data-redirect-url={redirectUrl}
-    >
+    <div className="projectCard__innercontainer" data-redirect-url={redirectUrl}>
       <img
         src={imageUrl}
         alt={title}

@@ -5,7 +5,6 @@ import { HeroSection } from './Pages/Homepage/HeroSection'
 import { SectionProcess } from './Pages/Homepage/SectionProcess'
 import { SectionSkills } from './Pages/Homepage/SectionSkills'
 import { SectionProjects } from './Pages/Homepage/SectionProjects'
-import { ScrambleText } from './Components/ScrambleText'
 
 function Inicio() {
   return (
@@ -19,7 +18,6 @@ function Inicio() {
       <SectionProcess />
       <SectionSkills />
       <SectionProjects />
-      <ScrambleText></ScrambleText>
     </>
   )
 }
