@@ -19,7 +19,7 @@ export function ProjectDetailPage({ project }) {
     function handleScroll() {
       const windowPosition = window.pageYOffset;
 
-      if (windowPosition > 1000) {
+      if (windowPosition > 600) {
         setIsHeaderVisible(true);
       } else {
         setIsHeaderVisible(false);

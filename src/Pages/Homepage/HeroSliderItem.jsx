@@ -45,7 +45,7 @@ export function HeroSliderItem({imgUrl, pageUrl, sliderTitle, sliderTag1, slider
     ref={CardItem}
     >
 
-        <Link to={`/proyectos/${pageUrl}`}>
+    
         <img src={`/media/${imgUrl}`} alt="" />
         <div className="hero__slider--1-content slider-overlay--hidden">
             <div className="hero__slider--1-innercontent">
@@ -57,7 +57,7 @@ export function HeroSliderItem({imgUrl, pageUrl, sliderTitle, sliderTag1, slider
              </div>
             </div>
         </div>   
-        </Link>
+      
     </motion.div>
     )
 }

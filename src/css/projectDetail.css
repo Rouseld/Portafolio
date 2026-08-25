@@ -31,7 +31,7 @@
 
 .projectpage .title__h1 {
   font-family: var(--font__Primary);
-  font-size: 96px;
+  font-size: 128px;
   margin: 0;
   font-weight: 100;
   background-image: var(--gradient__primary);
@@ -40,7 +40,6 @@
   color: transparent;
   text-align: center;
   padding: 0 64px;
-  line-height: 1.1;
 }
 
 .projectpage .title__h2 {
@@ -54,11 +53,11 @@
 
 .projectpage .title__h3 {
   font-family: var(--font__Primary);
-  font-size: 24px;
+  font-size: 32px;
   margin: 0;
   color: var(--primary__base--white);
   font-weight: 100;
-  text-align: left;
+  text-align: center;
 }
 
 /* Texto */
@@ -75,6 +74,7 @@
 .projectpage .text__medium {
   font-family: var(--font__Secondary);
   font-size: var(--font__text__medium);
+  min-width: 50%;
   max-width: 1160px;
   text-align: center;
   color: var(--primary__base--white);
@@ -97,7 +97,6 @@
   border: none;
   cursor: pointer;
   display: flex;
-  align-items: center;
   gap: 16px;
   width: fit-content;
   height: fit-content;
@@ -117,14 +116,12 @@
   cursor: pointer;
   gap: 16px;
   display: flex;
-  align-items: center;
   height: fit-content;
   width: fit-content;
 }
 
 .projectpage .icon__small {
   width: 24px;
-  color: white;
 }
 
 .projectpage .icon__medium {
@@ -134,30 +131,32 @@
 /* Header fijo que aparece al hacer scroll */
 
 .projectpage .header {
-  opacity: 0;
-  visibility: hidden;
-  transition: ease;
-  transition-duration: 1s;
-  display: flex;
-  margin-bottom: -100px;
-}
-
-.projectpage .header--visible {
-  opacity: 1;
-  visibility: visible;
-  display: flex;
-  position: sticky;
+  position: fixed;
   top: 0;
-  background-color: #ffffff30;
-  backdrop-filter: blur(40px);
-  -webkit-backdrop-filter: blur(40px);
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  /* Estilos visuales que SIEMPRE se mantienen. Viven aqui y no en
+     .header--visible para que el header no cambie de forma ni de
+     tamano cuando se desvanece */
   padding: 16px 12%;
   flex-direction: row;
   align-items: center;
-  transition: ease-out;
-  transition-duration: 1s;
   justify-content: space-between;
-  z-index: 500;
+  background-color: #ffffff30;
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+  /* Estado oculto: solo cambia la opacidad, nada mas */
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 1s ease;
+}
+
+/* Estado visible: solo se activa la opacidad y los clics */
+.projectpage .header--visible {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .projectpage .header__leftcontainer {
@@ -189,22 +188,22 @@
 
 .projectpage .maincontent__container__top {
   background-image:
-    radial-gradient(circle at top, #7651b6, var(--bg__color));
-  min-height: 700px;
+    url(/media/Asset__noise.png),
+    var(--gradient__secondary);
+  height: var(--heigh__small);
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  animation: gradientAnimation 5s linear infinite;
+  background-repeat: repeat;
   flex-direction: column;
   gap: 32px;
-  padding-top: 100px;
 }
 
 .projectpage .maincontent__container__top--buttoncontainer {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
   gap: 24px;
   padding-top: 32px;
 }
@@ -220,7 +219,7 @@
 }
 
 .projectpage .maincontent__container__bottom--img {
-  width: 80%;
+  width: calc(80% - (124px * 2));
   object-fit: contain;
   border-radius: 50px;
 }
@@ -271,7 +270,6 @@
 
 .projectpage .tab__button--active {
   background-color: #c09fff;
-  color: var(--bg__color);
   font-family: var(--font__Secondary);
   font-weight: 300;
   border-radius: 32px;
@@ -381,10 +379,15 @@
   display: flex;
   width: 80%;
   height: 90%;
+  display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   gap: 24px;
+}
+
+.projectpage .errorcontainer--img {
+  object-fit: contain;
 }
 
 /* Prototipo interactivo en Figma */
@@ -429,7 +432,7 @@
   }
 
   .projectpage .maincontent__container__top {
-    min-height: 500px;
+    height: 500px;
   }
 
   .projectpage .header {
