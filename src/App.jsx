@@ -6,6 +6,7 @@ import { SectionProcess } from './Pages/Homepage/SectionProcess'
 import { SectionSkills } from './Pages/Homepage/SectionSkills'
 import { SectionProjects } from './Pages/Homepage/SectionProjects'
 import { ProjectPage } from './Pages/Projects/ProjectPage'
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 function Inicio() {
   return (
