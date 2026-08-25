@@ -6,7 +6,7 @@ import { SectionProcess } from './Pages/Homepage/SectionProcess'
 import { SectionSkills } from './Pages/Homepage/SectionSkills'
 import { SectionProjects } from './Pages/Homepage/SectionProjects'
 import { ProjectPage } from './Pages/Projects/ProjectPage'
-import { SpeedInsights } from "@vercel/speed-insights/next"
+import { SpeedInsights } from "@vercel/speed-insights/react"
 
 function Inicio() {
   return (
@@ -31,6 +31,7 @@ export default function App() {
         <Route path="/" element={<Inicio />} />
         <Route path="/proyectos/:slug" element={<ProjectPage />} />
       </Routes>
+      <SpeedInsights />
     </BrowserRouter>
   )
 }
