@@ -1,6 +1,6 @@
-import { easeIn, easeOut, motion, propEffect } from "motion/react"
-import { filter } from "motion/react-client"
+import { easeOut, motion } from "motion/react"
 import { useRef, useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 export function HeroSliderItem({imgUrl, pageUrl, sliderTitle, sliderTag1, sliderTag2, index, id,initialEvents,PlayAnimation,itemActive, setItemActive,itemPositionX}){
     
@@ -27,7 +27,6 @@ export function HeroSliderItem({imgUrl, pageUrl, sliderTitle, sliderTag1, slider
         const DistanceMoveX = viewPortCenter - cardItemCenter;
 
         if(itemPositionX) itemPositionX(DistanceMoveX);
-        console.log(cardItemPositionX,cardItemWidth, viewPort, viewPortCenter)
     };
 
     function closeFocusItemSlider(){
@@ -46,11 +45,11 @@ export function HeroSliderItem({imgUrl, pageUrl, sliderTitle, sliderTag1, slider
     ref={CardItem}
     >
 
-        <a href={`./portafoliopages/${pageUrl}`}>
+        <Link to={`/proyectos/${pageUrl}`}>
         <img src={`/media/${imgUrl}`} alt="" />
         <div className="hero__slider--1-content slider-overlay--hidden">
             <div className="hero__slider--1-innercontent">
-             <img src="../media/icon__link.svg" alt="" className="icon__large" />
+             <img src="/media/icon__link.svg" alt="" className="icon__large" />
              <h3 className="title__h3">{sliderTitle}</h3>
              <div className="hero__slider--1-tags">
                 <p className="tags__regular">{sliderTag1}</p>
@@ -58,7 +57,7 @@ export function HeroSliderItem({imgUrl, pageUrl, sliderTitle, sliderTag1, slider
              </div>
             </div>
         </div>   
-        </a>
+        </Link>
     </motion.div>
     )
 }

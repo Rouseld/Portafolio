@@ -1,26 +1,28 @@
 import { SectionTextContent } from "../../Components/SectionTextContent";
 import { ProjectCard } from "../../Components/ProjectCard";
 import { FadeInUp } from "../../Components/FadeInUp";
+import { Link } from "react-router-dom";
 
+// Cada proyecto apunta a la ruta dinamica /proyectos/<slug> del nuevo sistema.
 const projects = [
-  { imageUrl: "/media/Asset__MarkeguinAcademyImg.png", redirectUrl: "./portafoliopages/MarkenguinLmsWebsite.html", title: "Lms Website", tags: ["Javascript", "Figma", "Web Development"] },
-  { imageUrl: "/media/Asset__MedpassCRMImg.png", redirectUrl: "./portafoliopages/Medpasscrm.html", title: "Medpass CRM", tags: ["Zeplin", "Figma"] },
-  { imageUrl: "/media/Asset__HealthbirdImg.png", redirectUrl: "./portafoliopages/HealthbirdApp.html", title: "Healthbird App Redesign", tags: ["UI/UX", "Figma"] },
-  { imageUrl: "/media/Asset__MarkeguinLandingImg.png", redirectUrl: "./portafoliopages/MarkenguinLandingPage.html", title: "Markenguin Landing Page", tags: ["Wordpress", "Figma"] },
-  { imageUrl: "/media/Asset__CalculatorImg.png", redirectUrl: "./portafoliopages/CalculatorApp.html", title: "Discount Calculator", tags: ["Javascript", "Figma"] },
-  { imageUrl: "/media/Asset__NanobebeImg.png", redirectUrl: "./portafoliopages/Nanobebe.html", title: "Nanobebe Ecommerce Website", tags: ["UI/UX", "AdobeXD", "Wordpress"] },
-  { imageUrl: "/media/Asset__KatyImg.png", redirectUrl: "./portafoliopages/KathyMedical.html", title: "Pharmcy Website", tags: ["Magento", "Figma"] },
-  { imageUrl: "/media/Asset__MedpassImg.png", redirectUrl: "./portafoliopages/MedpassWebsite.html", title: "Medpass Website", tags: ["Zeplin", "Figma"] },
-  { imageUrl: "/media/Asset__Drugstore2doorImg.png", redirectUrl: "./portafoliopages/Drugstore2doorLandingPage.html", title: "Drugstore2door Landing", tags: ["UI/UX", "Figma"] },
-  { imageUrl: "/media/Asset__ModernhomeImg.png", redirectUrl: "./portafoliopages/Modernhome.html", title: "Modern Home Website", tags: ["Wordpress", "Figma", "Crocoblock"] },
-  { imageUrl: "/media/Assst__DupontGarageImg.png", redirectUrl: "./portafoliopages/DupontGarageApp.html", title: "Hub Cars App", tags: ["UI/UX", "Figma"] },
-  { imageUrl: "/media/Asset__MarkenguinLanding2Img.png", redirectUrl: "./portafoliopages/MarkenguinSummerLanding.html", title: "Markenguin Summer Landing", tags: ["Wordpress", "Figma"] },
-  { imageUrl: "/media/Asset__Chattanooga.png", redirectUrl: "./portafoliopages/Chattanooga", title: "Chattanooga Party Inflatables", tags: ["Wordpress", "Figma"] },
-  { imageUrl: "/media/Asset__LyfeByTheHorns.png", redirectUrl: "./portafoliopages/Lyfebythehorns.html", title: "Podcast Website BLG", tags: ["Wordpress", "Figma"] },
-  { imageUrl: "/media/Asset__Sitz.png", redirectUrl: "./portafoliopages/SitzLandingPage.html", title: "Pet App Landing Page", tags: ["UI/UX", "Figma"] },
-  { imageUrl: "/media/Asset__DirtLegalRacing.png", redirectUrl: "./portafoliopages/DirtLegalLanding.html", title: "Dirt Legal Landing Page", tags: ["Wordpress", "Figma"] },
-  { imageUrl: "/media/Asset__DirtLegalWelderUp.png", redirectUrl: "./portafoliopages/WelderUpLandingPage.html", title: "Welder Up Landing Page", tags: ["Wordpress", "Figma"] },
-  { imageUrl: "/media/Asset__CiberSecurity.png", redirectUrl: "./portafoliopages/CyberSecurity.html", title: "CyberSecurity App", tags: ["UI/UX", "Figma"] }
+  { imageUrl: "/media/Asset__MarkeguinAcademyImg.png", redirectUrl: "/proyectos/markenguin-lms-website", title: "Lms Website", tags: ["Javascript", "Figma", "Web Development"] },
+  { imageUrl: "/media/Asset__MedpassCRMImg.png", redirectUrl: "/proyectos/medpass-crm", title: "Medpass CRM", tags: ["Zeplin", "Figma"] },
+  { imageUrl: "/media/Asset__HealthbirdImg.png", redirectUrl: "/proyectos/healthbird-app", title: "Healthbird App Redesign", tags: ["UI/UX", "Figma"] },
+  { imageUrl: "/media/Asset__MarkeguinLandingImg.png", redirectUrl: "/proyectos/markenguin-landing-page", title: "Markenguin Landing Page", tags: ["Wordpress", "Figma"] },
+  { imageUrl: "/media/Asset__CalculatorImg.png", redirectUrl: "/proyectos/discount-calculator", title: "Discount Calculator", tags: ["Javascript", "Figma"] },
+  { imageUrl: "/media/Asset__NanobebeImg.png", redirectUrl: "/proyectos/nanobebe-ecommerce", title: "Nanobebe Ecommerce Website", tags: ["UI/UX", "AdobeXD", "Wordpress"] },
+  { imageUrl: "/media/Asset__KatyImg.png", redirectUrl: "/proyectos/pharmacy-website", title: "Pharmcy Website", tags: ["Magento", "Figma"] },
+  { imageUrl: "/media/Asset__MedpassImg.png", redirectUrl: "/proyectos/medpass-website", title: "Medpass Website", tags: ["Zeplin", "Figma"] },
+  { imageUrl: "/media/Asset__Drugstore2doorImg.png", redirectUrl: "/proyectos/drugstore2door-landing", title: "Drugstore2door Landing", tags: ["UI/UX", "Figma"] },
+  { imageUrl: "/media/Asset__ModernhomeImg.png", redirectUrl: "/proyectos/modern-home-website", title: "Modern Home Website", tags: ["Wordpress", "Figma", "Crocoblock"] },
+  { imageUrl: "/media/Assst__DupontGarageImg.png", redirectUrl: "/proyectos/dupont-garage-app", title: "Hub Cars App", tags: ["UI/UX", "Figma"] },
+  { imageUrl: "/media/Asset__MarkenguinLanding2Img.png", redirectUrl: "/proyectos/markenguin-summer-landing", title: "Markenguin Summer Landing", tags: ["Wordpress", "Figma"] },
+  { imageUrl: "/media/Asset__Chattanooga.png", redirectUrl: "/proyectos/chattanooga", title: "Chattanooga Party Inflatables", tags: ["Wordpress", "Figma"] },
+  { imageUrl: "/media/Asset__LyfeByTheHorns.png", redirectUrl: "/proyectos/podcast-website", title: "Podcast Website BLG", tags: ["Wordpress", "Figma"] },
+  { imageUrl: "/media/Asset__Sitz.png", redirectUrl: "/proyectos/sitz-landing-page", title: "Pet App Landing Page", tags: ["UI/UX", "Figma"] },
+  { imageUrl: "/media/Asset__DirtLegalRacing.png", redirectUrl: "/proyectos/dirt-legal-landing", title: "Dirt Legal Landing Page", tags: ["Wordpress", "Figma"] },
+  { imageUrl: "/media/Asset__DirtLegalWelderUp.png", redirectUrl: "/proyectos/welder-up-landing-page", title: "Welder Up Landing Page", tags: ["Wordpress", "Figma"] },
+  { imageUrl: "/media/Asset__CiberSecurity.png", redirectUrl: "/proyectos/cybersecurity-app", title: "CyberSecurity App", tags: ["UI/UX", "Figma"] }
 ];
 
 export function SectionProjects() {
@@ -38,12 +40,13 @@ export function SectionProjects() {
         <div className="section__projects__innercontainer--bottom">
           {projects.map((project, index) => (
             <FadeInUp key={project.title} delay={index * 0.1} className="section__projects__innercontainer--projectitem">
-              <ProjectCard
-                imageUrl={project.imageUrl}
-                redirectUrl={project.redirectUrl}
-                title={project.title}
-                tags={project.tags}
-              />
+              <Link to={project.redirectUrl}>
+                <ProjectCard
+                  imageUrl={project.imageUrl}
+                  title={project.title}
+                  tags={project.tags}
+                />
+              </Link>
             </FadeInUp>
           ))}
         </div>

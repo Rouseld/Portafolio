@@ -9,6 +9,8 @@ html, body {
     --primary__base--white:#ffffff;
     --gradient__primary: linear-gradient(90deg, #FFF 0%, #AA91FC 100%);
     --gradient__secondary:linear-gradient(184deg, #FCDAAF -13.03%, #7651B6 20.24%, #060612 85.81%);
+    --gradient__buttons:linear-gradient(90deg,#FCDAAF,#B488FF);
+    --gradient__buttons--outline:linear-gradient(90deg,#FCDAAF,#FFFFFF);
     --height__large:1300px;
     --height__medium:1000px;
     --font__Primary:'Futura Hv BT', sans-serif;

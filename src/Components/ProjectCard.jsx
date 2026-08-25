@@ -1,6 +1,6 @@
-export function ProjectCard({ imageUrl, redirectUrl, title, tags = [] }) {
+export function ProjectCard({ imageUrl, title, tags = [] }) {
   return (
-    <div className="projectCard__innercontainer" data-redirect-url={redirectUrl}>
+    <div className="projectCard__innercontainer">
       <img
         src={imageUrl}
         alt={title}
